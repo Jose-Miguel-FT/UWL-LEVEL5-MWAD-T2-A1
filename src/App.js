@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import MedicalTreatment from './components/MedicalTreatment';
+import MedicalTreatmentList from './components/MedicalTreatmentList';
 
 {
   /*
@@ -19,11 +20,20 @@ export default function App() {
     name: 'charlie',
     startDate: new Date(2021, 10, 19).toLocaleDateString(),
   };
+
+  const jsonData =
+    '[{"treatId": "01", "treatCourseId": "10", "type": "alpha", "category": "bravo", "name": "charlie", "startDate": ""},' +
+    '{"treatId": "02", "treatCourseId": "20", "type": "delta", "category": "echelon", "name": "foxtrot", "startDate": ""},' +
+    '{"treatId": "03", "treatCourseId": "30", "type": "golf", "category": "hotel", "name": "india", "startDate": ""},' +
+    '{"treatId": "04", "treatCourseId": "40", "type": "juliet", "category": "kilo", "name": "lima", "startDate": ""},' +
+    '{"treatId": "05", "treatCourseId": "50", "type": "mike", "category": "november", "name": "oscar", "startDate": ""}';
+
   return (
     <div>
       <h1>LH MEDICAL COMPANY</h1>
       <br />
       <MedicalTreatment medicalTreatment={medicalTreatment1} />
+      <MedicalTreatmentList string={jsonData} />
     </div>
   );
 }
